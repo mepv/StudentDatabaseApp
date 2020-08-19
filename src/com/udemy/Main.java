@@ -1,28 +1,30 @@
 package com.udemy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	    Student student = new Student();
+		List<Student> students = new ArrayList<>();
+
 	    while (true) {
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Add a new Student. For Quit press Q.");
 
 	    	if (!scanner.nextLine().equals("Q")) {
-				System.out.println("Enter student first name: ");
-				String firstName = scanner.nextLine();
-				System.out.println("Enter student last name: ");
-				String lastName = scanner.nextLine();
-				student.addStudent(firstName, lastName);
+	    		Student student = new Student();
+				students.add(student);
 				student.enroll();
 				student.payTuition();
-
 	    	} else {
 	    		break;
 			}
 		}
-		student.showInfo();
+	    for (Student student: students) {
+			student.showInfo();
+		}
+
     }
 }
