@@ -14,9 +14,9 @@ public class Student {
     private static int id = 1000;
 
     public Student() {
-        System.out.println("Enter student first name: ");
+        System.out.print("Enter student first name: ");
         this.firstName = scanner.nextLine();
-        System.out.println("Enter student last name: ");
+        System.out.print("Enter student last name: ");
         this.lastName = scanner.nextLine();
         System.out.println("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student class level: ");
         while (true) {
@@ -38,14 +38,13 @@ public class Student {
         this.studentID = gradeYear + "" + id;
     }
 
-//    public void addStudent(String firstName, String lastName) {  //     addStudent(Student student) { students.add(student }
-//        students.add(new Student(firstName, lastName));
-//    }
-
-    // students.add(new Student()); should be used to add a new student, but I need to find
-    // a way to make a loop and any amount of student it requires. Remember on the constructor is this.students = new ArrayList<>();
-
     public void enroll() {
+        System.out.println("A student can be enrolled in the following courses:\n" +
+                "\tHistory 101\n" +
+                "\tMathematics 101\n" +
+                "\tEnglish 101\n" +
+                "\tChemistry 101\n" +
+                "\tComputer Science 101\n");
         do {
             System.out.print("Enter course to enroll (Q to quit): ");
             String course = scanner.nextLine();
@@ -77,6 +76,7 @@ public class Student {
         tuitionBalance = tuitionBalance - payment;
         System.out.println("Thank you for your payment of $" + payment);
         viewBalance();
+        System.out.println();
     }
 
 

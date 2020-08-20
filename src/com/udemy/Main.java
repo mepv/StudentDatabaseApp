@@ -11,7 +11,7 @@ public class Main {
 
 	    while (true) {
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("Add a new Student. For Quit press Q.");
+			System.out.println("For Add a new Student press A.\nFor Quit press Q.");
 
 	    	if (!scanner.nextLine().equals("Q")) {
 	    		Student student = new Student();
@@ -24,6 +24,7 @@ public class Main {
 		}
 	    for (Student student: students) {
 			student.showInfo();
+			System.out.println("==============================");
 		}
 
     }
