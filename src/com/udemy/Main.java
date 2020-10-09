@@ -11,12 +11,13 @@ public class Main {
 
 	    while (true) {
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("For Add a new Student press A.\nFor Quit press Q.");
+			System.out.println("For Add a new Student press Enter or Return.\nFor Quit/Finish press Q.");
 
 	    	if (!scanner.nextLine().equals("Q")) {
 	    		Student student = new Student();
 				students.add(student);
 				student.enroll();
+				student.viewBalance();
 				student.payTuition();
 	    	} else {
 	    		break;

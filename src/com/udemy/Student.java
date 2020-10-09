@@ -1,6 +1,6 @@
 package com.udemy;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Student {
     private static Scanner scanner = new Scanner(System.in);
@@ -45,12 +45,31 @@ public class Student {
                 "\tEnglish 101\n" +
                 "\tChemistry 101\n" +
                 "\tComputer Science 101\n");
+
+        Set<String> subjects = new HashSet<>();
+        subjects.add("History 101");
+        subjects.add("Mathematics 101");
+        subjects.add("English 101");
+        subjects.add("Chemistry 101");
+        subjects.add("Computer Science 101");
+
         do {
             System.out.print("Enter course to enroll (Q to quit): ");
             String course = scanner.nextLine();
             if (!course.equals("Q")) {
-                courses = courses + "\n" + course;
-                tuitionBalance += COST_OF_COURSE;
+                String courseChecked = "";
+                for (String value: subjects) {
+                    if (course.equals(value)) {
+                        courseChecked = value;
+                        break;
+                    }
+                }
+                if (courseChecked.equals(course)) {
+                    courses = courses + "\n" + course;
+                    tuitionBalance += COST_OF_COURSE;
+                } else {
+                    System.out.println("Course not valid, please try again.");
+                }
             } else {
                 break;
             }
